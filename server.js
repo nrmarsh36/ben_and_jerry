@@ -27,7 +27,7 @@ var icecreams = [
   })
 
   app.get(`/icecreams`, (req, res) => {
-      
+    res.render('flavors', { icecreams })
 })
 
 app.listen(PORT, () => console.log(`Connected to http://localhost:${PORT}, dude`));
