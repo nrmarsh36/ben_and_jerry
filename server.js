@@ -16,11 +16,17 @@ var icecreams = [
     { name: "pistachio", price: 11, awesomeness: 15 }
   ];
 
-  app.get(`/icecream/:name`, (req, res) => {
-
+  app.get(`/`, (req, res) => {
+      res.render('index')
   })
 
   app.get(`/icecreams/:name`, (req, res) => {
+    const targetFlavor = req.params.name
+    const found = icecreams.find(flavor => flavor.name === targetFlavor)
+    res.render('flavor', found)
+  })
+
+  app.get(`/icecreams`, (req, res) => {
       
 })
 
